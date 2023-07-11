@@ -20,11 +20,12 @@ Actually, we propose two methods, both methods can achieve the 3rd place.
 |------|------|------|------|------|------|------|------|------|------|------|
 | method1| 0.609| 0.196	|17.579|29.184|	0.538|0.103|0.160|-0.422|1.455|12.224|07.05|
 |method2|0.613|	0.204	|17.811|28.829|	0.540|	0.101|	0.151|	-1.733|	2.541|	12.192|	07.01|
-	
+
 
 # Inference pipeline for method1 (simpler)
 
- 
+ ## 1
+ ## 2
 
 # Inference pipeline for method2 (more steps)
 
