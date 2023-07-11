@@ -1,5 +1,5 @@
 # talking head generation (vico challenge 2023)
- The training and evaluation code for the competition ( we achived the 3rd place in the first track. Our team name: metah.)
+ The training and evaluation code for the vico competition ( we achived the 3rd place in the first track. Our team name: metah.)
 
 # Conclusions may be useful for you
 - If the resolution/quality of generated image is higher than the ground truth (for example, post process by gfpgan), the `FID` metric would be worse, however, the `CPBP` would be better, which is intuitive. 
@@ -24,11 +24,26 @@ Actually, we propose two methods, both methods can achieve the 3rd place.
 
 # Inference pipeline for method1 (simpler)
 
- ## 1
- ## 2
+ ## step1, extract keypoints and the 3dmm coefficients for the first frames 
+ xx
+ ## step2, predicting the 3dmm coefficients for the test audios, and feed to the render
+ xx
+ ## step3, combine audio and generated video
+ xx
 
 # Inference pipeline for method2 (more steps)
 
-
+ ## step1, extract keypoints and the 3dmm coefficients for the first frames 
+ xx
+ ## step2, predicting the 3dmm coefficients for the test audios, and feed to the render
+ xx
+ ## step3, pass the rendered video to wav2lip
+ xx
+ ## step4, extract keypoints and the 3dmm coefficients for the wav2lip generated videos
+ xx
+ ## step5, re-render videos using the coefficients obtained from step4
+ xx
+ ## step6, combine audio and generated video
+ xx
 
 # Training pipeline
