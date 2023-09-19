@@ -33,37 +33,63 @@ Actually, we propose two methods, both methods can achieve the 3rd place.
 | method2| 0.609| 0.196	|17.579|29.184|	0.538|0.103|0.160|-0.422|1.455|12.224|07.05|
 
 
-# Inference pipeline for method1 (simpler)
-
- ## step1
- **extract keypoints and the 3dmm coefficients for the first frames** 
- xx
- ## step2
- **predicting the 3dmm coefficients for the test audios, and feed to the render**
- xx
- ## step3
- **combine audio and generated video**
- xx
-
 # Inference pipeline for method2 (more steps)
 
  ## step1
- **extract keypoints and the 3dmm coefficients for the first frames** 
- xx
+ extract keypoints and the 3dmm coefficients for the first frames 
+
+**Note:** this step needs to prepare environment according to [deep3d_pytorch](https://github.com/sicxu/Deep3DFaceRecon_pytorch/tree/73d491102af6731bded9ae6b3cc7466c3b2e9e48#installation). Actually, we use two seperate enviroments, one for preprocess(deep3d_pytorch), one for others(sadtalker)
+ 
+ Our data structure is slightly different from the baseline,   
+ where the baseline is: 
+ > data/train/xx.mp4(.png)  
+
+ we do not have the train or test subfolder: 
+ > data/xx.mp4(.png)  
+
+extract facial landmarks from first frames  
+ ```python
+ python extract_kp_images.py \
+  --input_dir ../../data/talking_head/first_frames/ \
+  --output_dir ../../data/talking_head/keypoints/ \
+  --device_ids 0 \
+  --workers 2
+ ```
+ extract coefficients for first frames
+ ```python
+python face_recon_images.py \
+  --input_dir ../../data/talking_head/first_frames/ \
+  --keypoint_dir ../../data/talking_head/keypoints/ \
+  --output_dir ../../data/talking_head/recons/ \
+  --inference_batch_size 128 \
+  --name=official \ # we rename it to official
+  --epoch=20 \
+  --model facerecon
+ ```
  ## step2
- **predicting the 3dmm coefficients for the test audios, and feed to the render**
- xx
+ predicting the 3dmm coefficients for the test audios, and feed to the render
+ ```python
+ 
+ ```
  ## step3
- **pass the rendered video to wav2lip**
- xx
+ pass the rendered video to wav2lip
+ ```python
+ 
+ ```
  ## step4
- **extract keypoints and the 3dmm coefficients for the wav2lip generated videos**
- xx
+ extract keypoints and the 3dmm coefficients for the wav2lip generated videos
+```python
+ 
+ ```
  ## step5
- **re-render videos using the coefficients obtained from step4**
- xx
+ re-render videos using the coefficients obtained from step4
+ ```python
+ 
+ ```
  ## step6
- **combine audio and generated video**
- xx
+ combine audio and generated video
+ ```python
+
+ ```
 
 # Training pipeline
