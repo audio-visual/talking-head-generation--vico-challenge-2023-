@@ -35,6 +35,17 @@ Actually, we propose two methods, both methods can achieve the 3rd place.
 
 # Inference pipeline for method2 (more steps)
 
+Due to competition time limitations, the engineering code has not been cleaned up for reference only
+
+## Download essential checkpoints
+checkpoints for face-render(from sadtalker): 
+1) mapping.pth.tar https://drive.google.com/file/d/1fXggXOx1XPP799Ogc1Orv6RVIdbeXDwV/view?usp=drive_link
+2) facevid2vid.pth.tar https://drive.google.com/file/d/1q1VVz4VRVXmBzLpWtmn1NIeIPbBGVeVX/view?usp=drive_link
+checkpoints for wav2lip:
+1) wav2lip.pth https://drive.google.com/file/d/1zX-TLUpYXtG50WygOwlDbn4NvP1VD8ZY/view?usp=drive_link
+checkpoints for 3dmm prediction transformer/lstm:
+1) emotion transformer: https://drive.google.com/file/d/1mOHW2eLrGNHIQIZsKuJ-z0EOF53gwCF_/view?usp=drive_link 
+2) head motion lstm: https://drive.google.com/file/d/1ffef4k0n2Z7HraFiA2PrJKYwSNeoWpjk/view?usp=drive_link
  ## step1
  extract keypoints and the 3dmm coefficients for the first frames 
 
@@ -69,27 +80,33 @@ python face_recon_images.py \
  ## step2
  predicting the 3dmm coefficients for the test audios, and feed to the render
  ```python
- 
+ python inference_transformer1.py
  ```
  ## step3
  pass the rendered video to wav2lip
  ```python
- 
+ # cd wav2lip
+ python inference_dataset.py
  ```
  ## step4
  extract keypoints and the 3dmm coefficients for the wav2lip generated videos
-```python
- 
- ```
  ## step5
  re-render videos using the coefficients obtained from step4
  ```python
- 
+ python inference1_rotation_wav2lip.py
  ```
  ## step6
  combine audio and generated video
  ```python
-
+python combine_video_audio.py
  ```
 
-# Training pipeline
+# Training for method2 
+Unfortunately, this part of the code has been lost, but overall it is very simple. The production of training data can refer to:  
+`prepare_traning_batches.py`
+
+# Training for method1 
+**Inspirition:** The movement pattern of a person's lips is positively correlated with their facial appearance. For example, if a person's lips are large, their range of lip movement is also greater compared to those with small lips.  
+
+**Traning Difference:** We use the arcface model to extract face features from the first frame, and feed these the the original emotional-prediction transformer.  
+The results prove that the improvement in this step helps to improve the final lip-speech consistency under limited training data (only 430 items)

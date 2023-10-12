@@ -11,7 +11,7 @@ from torch import nn
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from logger import create_logger
-from data.dataset import InferenceDataset
+from data.dataset2 import InferenceDataset
 from data.generate_facerender_batch import get_facerender_data
 from models.disentangle_decoder.disentangle_decoder import DisentangleDecoder
 from models.transformer.transformer_arcface import Transformer3DMM
