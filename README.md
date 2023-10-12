@@ -1,5 +1,7 @@
 # talking head generation (vico challenge 2023)
  The training and evaluation code for the vico competition ( we achived the 3rd place in the first track. Our team name: metah.)
+![image](https://github.com/audio-visual/talking-head-generation--vico-challenge-2023-/assets/110716367/be4e1ab0-c74c-49c4-8c56-6270bd0cd419)
+
 
 # Conclusions may be useful for you
 - If the resolution/quality of generated image is higher than the ground truth (for example, post process by gfpgan), the `FID` metric would be worse, however, the `CPBP` would be better, which is intuitive.  
