@@ -40,12 +40,15 @@ Due to competition time limitations, the engineering code has not been cleaned u
 ## Download essential checkpoints
 checkpoints for face-render(from sadtalker): 
 1) mapping.pth.tar https://drive.google.com/file/d/1fXggXOx1XPP799Ogc1Orv6RVIdbeXDwV/view?usp=drive_link
-2) facevid2vid.pth.tar https://drive.google.com/file/d/1q1VVz4VRVXmBzLpWtmn1NIeIPbBGVeVX/view?usp=drive_link
+2) facevid2vid.pth.tar https://drive.google.com/file/d/1q1VVz4VRVXmBzLpWtmn1NIeIPbBGVeVX/view?usp=drive_link  
+
 checkpoints for wav2lip:
-1) wav2lip.pth https://drive.google.com/file/d/1zX-TLUpYXtG50WygOwlDbn4NvP1VD8ZY/view?usp=drive_link
+1) wav2lip.pth https://drive.google.com/file/d/1zX-TLUpYXtG50WygOwlDbn4NvP1VD8ZY/view?usp=drive_link  
+
 checkpoints for 3dmm prediction transformer/lstm:
 1) emotion transformer: https://drive.google.com/file/d/1mOHW2eLrGNHIQIZsKuJ-z0EOF53gwCF_/view?usp=drive_link 
-2) head motion lstm: https://drive.google.com/file/d/1ffef4k0n2Z7HraFiA2PrJKYwSNeoWpjk/view?usp=drive_link
+2) head motion lstm: https://drive.google.com/file/d/1ffef4k0n2Z7HraFiA2PrJKYwSNeoWpjk/view?usp=drive_link  
+
  ## step1
  extract keypoints and the 3dmm coefficients for the first frames 
 
