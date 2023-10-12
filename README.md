@@ -51,6 +51,9 @@ checkpoints for 3dmm prediction transformer/lstm:
 1) emotion transformer: https://drive.google.com/file/d/1mOHW2eLrGNHIQIZsKuJ-z0EOF53gwCF_/view?usp=drive_link 
 2) head motion lstm: https://drive.google.com/file/d/1ffef4k0n2Z7HraFiA2PrJKYwSNeoWpjk/view?usp=drive_link  
 
+## Download test data
+https://drive.google.com/file/d/1NF7hbE9M-GABAZnGu7p7ZDYFRUaqxQxb/view?usp=drive_link
+
  ## step1
  extract keypoints and the 3dmm coefficients for the first frames 
 
@@ -113,5 +116,5 @@ Unfortunately, this part of the code has been lost, but overall it is very simpl
 # Training for method1 
 **Inspirition:** The movement pattern of a person's lips is positively correlated with their facial appearance. For example, if a person's lips are large, their range of lip movement is also greater compared to those with small lips.  
 
-**Traning Difference:** We use the arcface model to extract face features from the first frame, and feed these the the original emotional-prediction transformer.  
+**Traning difference:** We use the arcface model to extract face features from the first frame, and feed these the the original emotional-prediction transformer.  
 The results prove that the improvement in this step helps to improve the final lip-speech consistency under limited training data (only 430 items)
